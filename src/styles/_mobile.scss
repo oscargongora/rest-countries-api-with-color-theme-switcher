@@ -1,0 +1,170 @@
+// - Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
+// - Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
+// - Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
+// - Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
+// - Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
+// - White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)
+
+.App {
+  background-color: $very-dark-blue-bg;
+  min-height: 100vh;
+  header {
+    background: $dark-blue;
+    height: 160px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    box-shadow: 0 4px 12px rgba($color: #000000, $alpha: 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    .logo {
+      color: $white;
+      font-size: 18px;
+      font-weight: $bold-fw;
+    }
+    .app-mode-toggle {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      svg {
+        color: $white;
+        font-size: 16px;
+        transform: rotateZ(-30deg);
+      }
+      p {
+        font-size: 14px;
+        color: $white;
+        margin: 0 0 0 14px;
+      }
+    }
+    &.light {
+      background: $white;
+      .logo {
+        color: $very-dark-blue-text;
+      }
+      .app-mode-toggle {
+        svg {
+          color: $very-dark-blue-text;
+        }
+        p {
+          color: $very-dark-blue-text;
+        }
+      }
+    }
+  }
+  .landing {
+    padding: 160px 30px 0;
+    margin: 48px 0 0;
+    .country-list {
+      padding: 64px 0;
+      max-width: 100%;
+      .country-item {
+        margin-bottom: 40px;
+        background-color: $dark-blue;
+        color: $white;
+        border-radius: 10px;
+        .flag {
+          img {
+            border-radius: 10px 10px 0 0;
+            max-width: 100%;
+          }
+        }
+        .country-item-details {
+          padding: 30px 24px;
+          h1 {
+            margin: 0 0 22px 0;
+            font-size: 24px;
+            font-weight: $bold-fw;
+            cursor: pointer;
+          }
+          p {
+            margin: 0 0 12px 0;
+            font-size: 16px;
+            font-weight: $light-fw;
+            strong {
+              font-weight: $bold-fw;
+            }
+          }
+        }
+      }
+    }
+    &.light {
+      background-color: $very-light-gray-bg;
+    }
+  }
+  .country-details {
+    padding: 160px 30px 0;
+    margin: 48px 0 0;
+    button {
+      text-transform: capitalize;
+    }
+    .flag {
+      padding: 64px 0 0;
+
+      img {
+        max-width: 100%;
+      }
+    }
+    .details {
+      color: $white;
+      padding: 50px 0;
+      h1 {
+        font-size: 32px;
+        font-weight: $bold-fw;
+        margin: 0 0 30px;
+      }
+      .separator {
+        height: 30px;
+      }
+      p {
+        margin: 0 0 22px;
+        font-weight: $light-fw;
+        strong {
+          font-weight: $bold-fw;
+        }
+      }
+      h2 {
+        margin: 22px 0;
+        font-size: 20px;
+        font-weight: $bold-fw;
+      }
+      .borders {
+        display: flex;
+        flex-wrap: wrap;
+        a {
+          background-color: $dark-blue;
+          padding: 8px 24px;
+          color: $white;
+          text-transform: capitalize;
+          text-decoration: none;
+          box-shadow: 0 3px 9px rgba($color: #000000, $alpha: 0.2);
+          border-radius: 4px;
+          font-size: 14px;
+          margin-right: 8px;
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+  .spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      color: $white;
+    }
+  }
+  &.light {
+    background-color: transparent;
+    .spinner {
+      svg {
+        color: $very-dark-blue-text;
+      }
+    }
+  }
+}
