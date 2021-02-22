@@ -1,5 +1,6 @@
 // - Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
 // - Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
+
 // - Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
 // - Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
 // - Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
@@ -42,20 +43,6 @@
         margin: 0 0 0 14px;
       }
     }
-    &.light {
-      background: $white;
-      .logo {
-        color: $very-dark-blue-text;
-      }
-      .app-mode-toggle {
-        svg {
-          color: $very-dark-blue-text;
-        }
-        p {
-          color: $very-dark-blue-text;
-        }
-      }
-    }
   }
   .landing {
     padding: 160px 30px 0;
@@ -64,14 +51,17 @@
       padding: 64px 0;
       max-width: 100%;
       .country-item {
-        margin-bottom: 40px;
+        margin: 0 auto 40px;
         background-color: $dark-blue;
         color: $white;
         border-radius: 10px;
+        max-width: 450px;
+        box-shadow: 0 3px 12px rgba($color: #000000, $alpha: 0.2);
         .flag {
           img {
             border-radius: 10px 10px 0 0;
             max-width: 100%;
+            object-fit: cover;
           }
         }
         .country-item-details {
@@ -93,60 +83,61 @@
         }
       }
     }
-    &.light {
-      background-color: $very-light-gray-bg;
-    }
   }
   .country-details {
     padding: 160px 30px 0;
     margin: 48px 0 0;
-    button {
-      text-transform: capitalize;
+    .country-details-header {
+      button {
+        text-transform: capitalize;
+      }
     }
-    .flag {
-      padding: 64px 0 0;
+    .country-details-body {
+      .flag {
+        padding: 64px 0 0;
 
-      img {
-        max-width: 100%;
-      }
-    }
-    .details {
-      color: $white;
-      padding: 50px 0;
-      h1 {
-        font-size: 32px;
-        font-weight: $bold-fw;
-        margin: 0 0 30px;
-      }
-      .separator {
-        height: 30px;
-      }
-      p {
-        margin: 0 0 22px;
-        font-weight: $light-fw;
-        strong {
-          font-weight: $bold-fw;
+        img {
+          max-width: 100%;
         }
       }
-      h2 {
-        margin: 22px 0;
-        font-size: 20px;
-        font-weight: $bold-fw;
-      }
-      .borders {
-        display: flex;
-        flex-wrap: wrap;
-        a {
-          background-color: $dark-blue;
-          padding: 8px 24px;
-          color: $white;
-          text-transform: capitalize;
-          text-decoration: none;
-          box-shadow: 0 3px 9px rgba($color: #000000, $alpha: 0.2);
-          border-radius: 4px;
-          font-size: 14px;
-          margin-right: 8px;
-          margin-bottom: 8px;
+      .details {
+        color: $white;
+        padding: 50px 0;
+        h1 {
+          font-size: 32px;
+          font-weight: $bold-fw;
+          margin: 0 0 30px;
+        }
+        .separator {
+          height: 30px;
+        }
+        p {
+          margin: 0 0 22px;
+          font-weight: $light-fw;
+          strong {
+            font-weight: $bold-fw;
+          }
+        }
+        h2 {
+          margin: 22px 0;
+          font-size: 20px;
+          font-weight: $bold-fw;
+        }
+        .borders {
+          display: flex;
+          flex-wrap: wrap;
+          a {
+            background-color: $dark-blue;
+            padding: 8px 24px;
+            color: $white;
+            text-transform: capitalize;
+            text-decoration: none;
+            box-shadow: 0 3px 9px rgba($color: #000000, $alpha: 0.2);
+            border-radius: 4px;
+            font-size: 14px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+          }
         }
       }
     }
@@ -160,7 +151,72 @@
     }
   }
   &.light {
-    background-color: transparent;
+    background-color: $very-light-gray-bg;
+    header {
+      background: $white;
+      .logo {
+        color: $very-dark-blue-text;
+      }
+      .app-mode-toggle {
+        svg {
+          color: $very-dark-blue-text;
+        }
+        p {
+          color: $very-dark-blue-text;
+        }
+      }
+    }
+    .landing {
+      .country-list {
+        .country-item {
+          background-color: $white;
+          color: $very-dark-blue-text;
+          .flag {
+            img {
+            }
+          }
+          .country-item-details {
+            h1 {
+            }
+            p {
+              strong {
+              }
+            }
+          }
+        }
+      }
+    }
+    .country-details {
+      .country-details-header {
+        button {
+        }
+      }
+      .country-details-body {
+        .flag {
+          img {
+          }
+        }
+        .details {
+          color: $very-dark-blue-text;
+          h1 {
+          }
+          .separator {
+          }
+          p {
+            strong {
+            }
+          }
+          h2 {
+          }
+          .borders {
+            a {
+              background-color: $white;
+              color: $very-dark-blue-text;
+            }
+          }
+        }
+      }
+    }
     .spinner {
       svg {
         color: $very-dark-blue-text;

@@ -1,0 +1,155 @@
+@media (min-width: 1200px) {
+  .App {
+    header {
+      background: $dark-blue;
+      height: 80px;
+      padding: 0 80px;
+      .logo {
+        color: $white;
+        font-size: 24px;
+        font-weight: $bold-fw;
+      }
+      .app-mode-toggle {
+        svg {
+          font-size: 18px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+    .landing {
+      padding: 128px 80px 0;
+      margin: 0;
+      .landing-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        > .MuiFormControl-root {
+          max-width: 480px;
+          margin-bottom: 0 !important;
+        }
+        > .MuiInputBase-root {
+          max-width: 200px;
+        }
+      }
+      .country-list {
+        padding: 48px 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 72px;
+        .country-item {
+          margin: 0 auto 0;
+          .flag {
+            img {
+            }
+          }
+          .country-item-details {
+            h1 {
+              font-size: 20px;
+            }
+            p {
+              margin: 0 0 12px 0;
+              font-size: 16px;
+              font-weight: $light-fw;
+              strong {
+                font-weight: $bold-fw;
+              }
+            }
+          }
+        }
+      }
+    }
+    .country-details {
+      padding: 128px 80px 0;
+      margin: 0;
+      .country-details-header {
+        button {
+        }
+      }
+      .country-details-body {
+        padding: 80px 0 0;
+        display: flex;
+        align-items: flex-start;
+        .flag {
+          max-width: 40%;
+          margin: 0 144px 0 0;
+          padding: 0;
+          img {
+            max-width: 100%;
+          }
+        }
+        .details {
+          color: $white;
+          padding: 0;
+          display: grid;
+          grid-template-areas:
+            "b1 b2"
+            "b3 b3";
+          .block-01 {
+            grid-area: b1;
+          }
+          .block-02 {
+            padding: 73.2px 0 0 117px;
+            grid-area: b2;
+          }
+          .block-03 {
+            grid-area: b3;
+          }
+          h1 {
+            font-size: 32px;
+            font-weight: $bold-fw;
+            margin: 0 0 30px;
+          }
+          .separator {
+            display: none;
+          }
+          p {
+            margin: 0 0 22px;
+            font-weight: $light-fw;
+            strong {
+              font-weight: $bold-fw;
+            }
+          }
+          h2 {
+            margin: 22px 0;
+            font-size: 20px;
+            font-weight: $bold-fw;
+          }
+          .borders {
+            display: flex;
+            flex-wrap: wrap;
+            a {
+              background-color: $dark-blue;
+              padding: 8px 24px;
+              color: $white;
+              text-transform: capitalize;
+              text-decoration: none;
+              box-shadow: 0 3px 9px rgba($color: #000000, $alpha: 0.2);
+              border-radius: 4px;
+              font-size: 14px;
+              margin-right: 8px;
+              margin-bottom: 8px;
+            }
+          }
+        }
+      }
+    }
+    .spinner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg {
+        color: $white;
+      }
+    }
+    &.light {
+      background-color: transparent;
+      .spinner {
+        svg {
+          color: $very-dark-blue-text;
+        }
+      }
+    }
+  }
+}

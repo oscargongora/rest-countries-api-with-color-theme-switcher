@@ -6,7 +6,7 @@ import { AppContext } from "../../context";
 const Header = () => {
   const { state, toggleAppMode } = useContext(AppContext);
   return (
-    <header className={state.appMode}>
+    <header>
       <div className="logo">Where in the world?</div>
       <div className="app-mode-toggle" onClick={(ev) => toggleAppMode()}>
         {state.appMode === "dark" ? (

@@ -27,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Landing = () => {
   const classes = useStyles();
-  const { state } = useContext(AppContext);
   const [country, setCountry] = useState("");
   const [region, setRegion] = useState("");
 
@@ -39,43 +38,45 @@ const Landing = () => {
     setRegion(ev.target.value);
   };
   return (
-    <div className={`landing ${state.appMode}`}>
-      <TextField
-        className={classes.input}
-        id="country-input"
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <FontAwesomeIcon icon={faSearch} />
-            </InputAdornment>
-          ),
-        }}
-        fullWidth={true}
-        variant="outlined"
-        placeholder="Search for a country..."
-        value={country}
-        type="text"
-        style={{ marginBottom: 48 }}
-        onChange={handleCountryChange}
-      />
-      <Select
-        className={classes.input}
-        id="region-input"
-        value={region}
-        displayEmpty
-        variant="outlined"
-        style={{ width: "60%" }}
-        placeholder="Search for a country..."
-        required
-        onChange={handleRegionChange}
-      >
-        <MenuItem value="">Filter by Region</MenuItem>
-        <MenuItem value="Africa">Africa</MenuItem>
-        <MenuItem value="America">America</MenuItem>
-        <MenuItem value="Asia">Asia</MenuItem>
-        <MenuItem value="Europe">Europe</MenuItem>
-        <MenuItem value="Oceania">Oceania</MenuItem>
-      </Select>
+    <div className="landing">
+      <div className="landing-header">
+        <TextField
+          className={classes.input}
+          id="country-input"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <FontAwesomeIcon icon={faSearch} />
+              </InputAdornment>
+            ),
+          }}
+          fullWidth={true}
+          variant="outlined"
+          placeholder="Search for a country..."
+          value={country}
+          type="text"
+          style={{ marginBottom: 48 }}
+          onChange={handleCountryChange}
+        />
+        <Select
+          className={classes.input}
+          id="region-input"
+          value={region}
+          displayEmpty
+          variant="outlined"
+          style={{ width: "60%" }}
+          placeholder="Search for a country..."
+          required
+          onChange={handleRegionChange}
+        >
+          <MenuItem value="">Filter by Region</MenuItem>
+          <MenuItem value="Africa">Africa</MenuItem>
+          <MenuItem value="America">America</MenuItem>
+          <MenuItem value="Asia">Asia</MenuItem>
+          <MenuItem value="Europe">Europe</MenuItem>
+          <MenuItem value="Oceania">Oceania</MenuItem>
+        </Select>
+      </div>
       <CountryList country={country} region={region}></CountryList>
     </div>
   );
